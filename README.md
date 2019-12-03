@@ -24,17 +24,21 @@ Recipes
 
 default
 -------
-Running the default recipe will invoke the installation as set in the default attributes (default is `install.sh`)
+Running the default recipe will run the config recipe to invoke the installation as set in the default attributes (default is `install.sh`)
 
 config
 ------
-The config recipe manages the lacework configuration `config.json`
+The config recipe manages the lacework configuration `/var/lib/lacework/config/config.json` for the lacework agent. All configurations are added using Chef attributes. For more information on available configuration for the Lacework agent visit the [Lacework documentation](https://support.lacework.com/hc/en-us/articles/360024365753-Configure-Agent-Behavior-in-config-json-File).
+
+install
+-------
+The install recipe handles the logic for choosing the correct method to install the agent, which is determined by the attribute `node['lacework']['install_method']`
 
 Attributes
 ==========
-The following attributes affect the behavior of the of the lacework agent and its configuration
+The following attributes affect the behavior of the of this cookbook, the lacework agent, and its configuration
 
-- `node['lacework']['install_method'] = 'install_sh'` - Sets the method to install the agent (options include: `yum`, `apt`, `rpm`, `deb`) 
+- `node['lacework']['install_method'] = 'script'` - Sets the method to install the agent (options include: `yum`, `apt`, `rpm`, `deb`) 
 - `node['lacework']['config']['token'] = nil` - API token associated with your Lacework account. Docs for creating a new API token can be found [here](https://support.lacework.com/hc/en-us/articles/360036425594-Download-Agent-Installers-and-Get-the-Agent-Access-Token)
 - `node['lacework']['config']['proxy_url'] = nil` - The Lacework agent can be configured to use a network proxy by adding proxy information to the configuration file or by creating a https_proxy environment variable. For more information, see [Required Connectivity, Proxies & Certificates](https://support.lacework.com/hc/en-us/articles/360008149354).
 - `node['lacework']['config']['tags'] = []` - Specify name/value tags to categorize your agents, for example, identifying critical assets. For more information, see [Adding Agent Tags](https://support.lacework.com/hc/en-us/articles/360008466893).
