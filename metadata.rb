@@ -4,7 +4,7 @@ maintainer_email 'humans@lacework.net'
 license 'All Rights Reserved'
 description 'Installs/Configures chef-lacework'
 version '0.1.0'
-chef_version '>= 14.0'
+chef_version '>= 13.0'
 %w( amazon centos fedora debian oracle redhat suse opensuse ubuntu ).each do |os|
   supports os
 end
