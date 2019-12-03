@@ -41,6 +41,7 @@ suites:
         - test/integration/default
     attributes:
       chef-lacework:
+        install_method: 'yum'
         config:
           tokens:
             AccessToken: <%= ENV['LACEWORK_ACCESS_TOKEN'] %>
@@ -70,3 +71,14 @@ suites:
                 - "/etc/fstab"
             runat:
               - "23:50"
+  - name: yum-repo
+    run_list:
+      - recipe[chef-lacework::_yum]
+    verifier:
+      inspec_tests:
+        - test/integration/default
+    attributes:
+      chef-lacework:
+        config:
+          tokens:
+            AccessToken: <%= ENV['LACEWORK_ACCESS_TOKEN'] %> 
