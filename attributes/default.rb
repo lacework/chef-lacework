@@ -1,6 +1,6 @@
-default['chef-lacework']['apitoken'] = ''
+default['chef-lacework']['accesstoken'] = ''
 default['chef-lacework']['install_method'] = 'script'
-default['chef-lacework']['config'] = {}
+default['chef-lacework']['config'] = {} # Config template will render any hash of key/val pairs
 
 # Install Script attributes
 default['chef-lacework']['install_script']['dir'] = '/tmp'

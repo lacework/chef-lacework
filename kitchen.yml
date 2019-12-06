@@ -41,7 +41,7 @@ suites:
         - test/integration/default
     attributes:
       chef-lacework:
-        install_method: 'yum'
+        install_method: 'apt'
         config:
           tokens:
             AccessToken: <%= ENV['LACEWORK_ACCESS_TOKEN'] %>

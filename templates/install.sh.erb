@@ -38,7 +38,7 @@ dc_sha1=<%= node['chef-lacework']['install_script']['dc_sha1'] %>
 pkgname=lacework
 download_url="https://s3-us-west-2.amazonaws.com/www.lacework.net/download/${commit_hash}"
 
-ARG1=<%= node['chef-lacework']['apitoken'] %>
+ARG1=<%= node['chef-lacework']['accesstoken'] %>
 usedocker=no
 
 check_bash() {
@@ -596,7 +596,7 @@ while getopts "SOh" arg; do
       ;;
   esac
 done
-ARG1=4e6253806eace4ac25b0f26f0c194be6ba6d440d56e1c675cbbac2f2
+ARG1=<%= node['chef-lacework']['accesstoken'] %>
 if [ ! -z "${ARG1}" ]; then
    ARG1=`echo ${ARG1} | grep -E '^[[:alnum:]][-[:alnum:]]{0,55}[[:alnum:]]$'`
 fi
