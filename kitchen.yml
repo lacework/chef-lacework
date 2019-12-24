@@ -21,17 +21,16 @@ verifier:
   name: inspec
 
 platforms:
-  - name: amazonlinux
-    driver_config:
-      box: mvbcoding/awslinux
-  - name: amazonlinux-2
-    driver_config:
-      box: gbailey/amzn2
-  - name: centos-6
+  # - name: amazonlinux
+  #   driver_config:
+  #     box: mvbcoding/awslinux
+  # - name: amazonlinux-2
+  #   driver_config:
+  #     box: gbailey/amzn2
+  # - name: centos-6
   - name: centos-7
-  - name: debian-9
-  - name: debian-10
-  - name: ubuntu-16.04
+  # - name: debian-9
+  # - name: ubuntu-16.04
   - name: ubuntu-18.04
 
 suites:
@@ -41,7 +40,6 @@ suites:
         - test/integration/default
     attributes:
       chef-lacework:
-        install_method: 'apt'
         config:
           tokens:
             AccessToken: <%= ENV['LACEWORK_ACCESS_TOKEN'] %>
@@ -71,14 +69,37 @@ suites:
                 - "/etc/fstab"
             runat:
               - "23:50"
-  - name: yum-repo
+  - name: repo
     run_list:
-      - recipe[chef-lacework::_yum]
+      - recipe[chef-lacework::repo]
     verifier:
       inspec_tests:
         - test/integration/default
     attributes:
       chef-lacework:
+        install_method: repo
         config:
           tokens:
-            AccessToken: <%= ENV['LACEWORK_ACCESS_TOKEN'] %> 
+            AccessToken: <%= ENV['LACEWORK_ACCESS_TOKEN'] %>
+        rpm_package:
+          url: <%= ENV['LACEWORK_RPM_PACKAGE_URL'] %> 
+        deb_package:
+          url: <%= ENV['LACEWORK_RPM_PACKAGE_URL'] %> 
+  - name: package
+    run_list:
+      - recipe[chef-lacework::package]
+    verifier:
+      inspec_tests:
+        - test/integration/default
+    attributes:
+      chef-lacework:
+        install_method: package
+        config:
+          tokens:
+            AccessToken: <%= ENV['LACEWORK_ACCESS_TOKEN'] %>
+        rpm_package:
+          url: <%= ENV['LACEWORK_RPM_PACKAGE_URL'] %> 
+          shasum: <%= ENV['LACEWORK_RPM_PACKAGE_SHASUM'] %> 
+        deb_package:
+          url: <%= ENV['LACEWORK_DEB_PACKAGE_URL'] %> 
+          shasum: <%= ENV['LACEWORK_DEB_PACKAGE_SHASUM'] %> 
