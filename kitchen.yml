@@ -81,10 +81,6 @@ suites:
         config:
           tokens:
             AccessToken: <%= ENV['LACEWORK_ACCESS_TOKEN'] %>
-        rpm_package:
-          url: <%= ENV['LACEWORK_RPM_PACKAGE_URL'] %> 
-        deb_package:
-          url: <%= ENV['LACEWORK_RPM_PACKAGE_URL'] %> 
   - name: package
     run_list:
       - recipe[chef-lacework::package]
