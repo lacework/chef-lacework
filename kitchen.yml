@@ -21,20 +21,22 @@ verifier:
   name: inspec
 
 platforms:
-  # - name: amazonlinux
-  #   driver_config:
-  #     box: mvbcoding/awslinux
-  # - name: amazonlinux-2
-  #   driver_config:
-  #     box: gbailey/amzn2
-  # - name: centos-6
+  - name: amazonlinux
+    driver_config:
+      box: mvbcoding/awslinux
+  - name: amazonlinux-2
+    driver_config:
+      box: gbailey/amzn2
   - name: centos-7
-  # - name: debian-9
-  # - name: ubuntu-16.04
+  - name: centos-8
+  - name: debian-9
+  - name: ubuntu-16.04
   - name: ubuntu-18.04
 
 suites:
   - name: default
+    run_list:
+      - recipe[chef-lacework::default]
     verifier:
       inspec_tests:
         - test/integration/default
@@ -43,6 +45,8 @@ suites:
         config:
           tokens:
             AccessToken: <%= ENV['LACEWORK_ACCESS_TOKEN'] %>
+          cpulimit: "500m"
+          memlimit: "750M"
 
   - name: config
     run_list:
