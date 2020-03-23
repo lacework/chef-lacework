@@ -2,10 +2,10 @@
 # Cookbook:: chef-lacework
 # Recipe:: install
 #
-# Copyright:: 2019, The Authors, All Rights Reserved.
+# Copyright:: 2020, The Authors, All Rights Reserved.
 
 case node['chef-lacework']['install_method']
-when 'script'
+when 'install_script'
   include_recipe 'chef-lacework::_script'
 when 'repo'
   include_recipe 'chef-lacework::repo'

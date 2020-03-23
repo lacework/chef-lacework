@@ -2,22 +2,14 @@
 # Cookbook:: chef-lacework
 # Recipe:: _script
 #
-# Copyright:: 2019, The Authors, All Rights Reserved.
-directory node['chef-lacework']['install_script']['dir'] do
-  owner 'root'
-  group 'root'
-  mode '0755'
-  action :create
+# Copyright:: 2020, The Authors, All Rights Reserved.
+remote_file "#{node['chef-lacework']['install_script']['dir']}/install.sh" do
+  source 'https://packages.lacework.net/install.sh'
+  mode '0500'
 end
 
-template "#{node['chef-lacework']['install_script']['dir']}/install.sh" do
-  source 'install.sh.erb'
-  owner 'root'
-  group 'root'
-  mode '0700'
-  action :create
-end
+execute 'install.sh' do
+  command "#{node['chef-lacework']['install_script']['dir']}/install.sh #{node['chef-lacework']['accesstoken']}"
 
-execute "#{node['chef-lacework']['install_script']['dir']}/install.sh" do
-  action :run
+  not_if { ::File.exist?('/var/lib/lacework/datacollector') }
 end

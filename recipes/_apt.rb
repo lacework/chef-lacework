@@ -2,8 +2,7 @@
 # Cookbook:: chef-lacework
 # Recipe:: _apt
 #
-# Copyright:: 2019, The Authors, All Rights Reserved.
-
+# Copyright:: 2020, The Authors, All Rights Reserved.
 case node['platform']
 when 'ubuntu'
   apt_repository 'packages-lacework-prod' do
@@ -26,7 +25,7 @@ when 'debian'
     keyserver 'keyserver.ubuntu.com'
     components ['main']
     action :add
-  end 
+  end
 end
 
 apt_package 'lacework' do

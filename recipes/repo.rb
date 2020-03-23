@@ -2,7 +2,7 @@
 # Cookbook:: chef-lacework
 # Recipe:: repo
 #
-# Copyright:: 2019, The Authors, All Rights Reserved.
+# Copyright:: 2020, The Authors, All Rights Reserved.
 include_recipe 'chef-lacework::config'
 
 case node['platform_family']
