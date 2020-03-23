@@ -2,7 +2,7 @@
 # Cookbook:: chef-lacework
 # Recipe:: _apt
 #
-# Copyright:: 2020, The Authors, All Rights Reserved.
+# Copyright:: 2020, Lacework, All Rights Reserved.
 case node['platform']
 when 'ubuntu'
   apt_repository 'packages-lacework-prod' do

@@ -2,7 +2,7 @@
 # Cookbook:: chef-lacework
 # Recipe:: config
 #
-# Copyright:: 2020, The Authors, All Rights Reserved.
+# Copyright:: 2020, Lacework, All Rights Reserved.
 directory '/var/lib/lacework/config' do
   recursive true
 end

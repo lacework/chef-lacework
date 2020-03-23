@@ -2,7 +2,7 @@
 # Cookbook:: chef-lacework
 # Spec:: _script
 #
-# Copyright:: 2020, The Authors, All Rights Reserved.
+# Copyright:: 2020, Lacework, All Rights Reserved.
 
 require 'spec_helper'
 

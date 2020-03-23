@@ -2,7 +2,7 @@
 # Cookbook:: chef-lacework
 # Recipe:: _yum
 #
-# Copyright:: 2020, The Authors, All Rights Reserved.
+# Copyright:: 2020, Lacework, All Rights Reserved.
 yum_repository 'packages-lacework-prod' do
   action :create
   baseurl 'https://packages.lacework.net/RPMS/x86_64'

@@ -2,7 +2,7 @@
 # Cookbook:: chef-lacework
 # Recipe:: _rpm
 #
-# Copyright:: 2020, The Authors, All Rights Reserved.
+# Copyright:: 2020, Lacework, All Rights Reserved.
 
 remote_file "#{node['chef-lacework']['package_dir']}/#{node['chef-lacework']['rpm_package']['package_name']}" do
   source node['chef-lacework']['rpm_package']['url']
