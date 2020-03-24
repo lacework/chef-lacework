@@ -2,7 +2,7 @@
 # Cookbook:: chef-lacework
 # Recipe:: _script
 #
-# Copyright:: 2020, The Authors, All Rights Reserved.
+# Copyright:: 2020, Lacework, All Rights Reserved.
 remote_file "#{node['chef-lacework']['install_script']['dir']}/install.sh" do
   source 'https://packages.lacework.net/install.sh'
   mode '0500'
