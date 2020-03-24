@@ -1,8 +1,8 @@
 name 'chef-lacework'
 maintainer 'Lacework, Inc.'
 maintainer_email 'tech-ally@lacework.net'
-license 'All Rights Reserved'
-description 'Installs/Configures chef-lacework'
+license 'Apache-2.0'
+description 'Installs the Lacework agent for workload protection'
 version '0.1.0'
 chef_version '>= 13.0'
 %w( amazon centos fedora debian oracle redhat suse opensuse ubuntu ).each do |os|
