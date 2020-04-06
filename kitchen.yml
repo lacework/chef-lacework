@@ -44,7 +44,7 @@ suites:
       chef-lacework:
         config:
           tokens:
-            AccessToken: <%= ENV['LACEWORK_ACCESS_TOKEN'] %>
+            AccessToken: <%= ENV['LW_ACCESS_TOKEN'] %>
           cpulimit: "500m"
           memlimit: "750M"
 
@@ -58,7 +58,7 @@ suites:
         chef-lacework:
           config:
             tokens:
-              AccessToken: <%= ENV['LACEWORK_ACCESS_TOKEN'] %>
+              AccessToken: <%= ENV['LW_ACCESS_TOKEN'] %>
             proxyurl: "http://Your_Proxy_Server:Your_Port"
             tags:
               test_01: "Value_01"
@@ -84,7 +84,7 @@ suites:
         install_method: repo
         config:
           tokens:
-            AccessToken: <%= ENV['LACEWORK_ACCESS_TOKEN'] %>
+            AccessToken: <%= ENV['LW_ACCESS_TOKEN'] %>
   - name: package
     run_list:
       - recipe[chef-lacework::package]
@@ -96,10 +96,10 @@ suites:
         install_method: package
         config:
           tokens:
-            AccessToken: <%= ENV['LACEWORK_ACCESS_TOKEN'] %>
+            AccessToken: <%= ENV['LW_ACCESS_TOKEN'] %>
         rpm_package:
-          url: <%= ENV['LACEWORK_RPM_PACKAGE_URL'] %> 
-          shasum: <%= ENV['LACEWORK_RPM_PACKAGE_SHASUM'] %> 
+          url: <%= ENV['LW_RPM_PACKAGE_URL'] %>
+          shasum: <%= ENV['LW_RPM_PACKAGE_SHASUM'] %>
         deb_package:
-          url: <%= ENV['LACEWORK_DEB_PACKAGE_URL'] %> 
-          shasum: <%= ENV['LACEWORK_DEB_PACKAGE_SHASUM'] %> 
+          url: <%= ENV['LW_DEB_PACKAGE_URL'] %>
+          shasum: <%= ENV['LW_DEB_PACKAGE_SHASUM'] %>
