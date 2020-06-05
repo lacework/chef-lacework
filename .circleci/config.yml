@@ -1,0 +1,17 @@
+version: 2.1
+
+executors:
+  chefdk:
+    docker: [image: "chef/chefworkstation:current"]
+
+jobs:
+  build:
+    executor: chefdk
+    steps:
+      - checkout
+      - run:
+          name: Run cookstyle
+          command: cookstyle .
+      - run:
+          name: Run rspec
+          command: rspec .
