@@ -2,7 +2,7 @@
 
 Lacework Agent Cookbook
 =========================
-[![lacework](https://circleci.com/gh/lacework/chef-lacework.svg?style=shield)](https://circleci.com/gh/lacework/chef-lacework)
+[![lacework](https://circleci.com/gh/lacework/chef-lacework.svg?style=shield)](https://circleci.com/gh/lacework/chef-lacework) [![Cookbook Version](https://img.shields.io/cookbook/v/chef-lacework.svg)](https://supermarket.chef.io/cookbooks/chef-lacework)
 
 [Lacework](https://lacework.com) is an end to end security platform designed to meet the demands of modern application deployments. The chef-lacework cookbook handles the installation and configuration of the Lacework agent.
 
