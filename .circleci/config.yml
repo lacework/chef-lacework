@@ -10,8 +10,5 @@ jobs:
     steps:
       - checkout
       - run:
-          name: Run cookstyle
-          command: cookstyle .
-      - run:
-          name: Run rspec
-          command: rspec .
+          name: Run delivery
+          command: delivery local all
