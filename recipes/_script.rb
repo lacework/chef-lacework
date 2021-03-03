@@ -10,6 +10,8 @@ end
 
 execute 'install.sh' do
   command "#{node['chef-lacework']['install_script']['dir']}/install.sh #{node['chef-lacework']['accesstoken']}"
+  # does not prevent it from being exposed in the process table
+  sensitive true
 
   not_if { ::File.exist?('/var/lib/lacework/datacollector') }
 end
