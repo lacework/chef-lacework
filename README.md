@@ -113,6 +113,7 @@ template '/var/lib/lacework/config/config.json' do
   variables(
     config: config
   )
+  sensitive true
 end
 ​
 ​
