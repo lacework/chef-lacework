@@ -79,7 +79,7 @@ The following attributes affect the behavior of the of this cookbook, the lacewo
 Patterns for protecting Tokens
 =======
 
-Due to the way the cookbook is written we are exposing all the configuration as a namespace in chef. However there are sensitive properties such as the access key.
+All of the configuration is exposed as a namespace in chef. There are sensitive properties such as the access key.
 
 Using `node.run_state` and a secret manager
 ------
