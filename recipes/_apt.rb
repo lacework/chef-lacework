@@ -8,7 +8,7 @@ when 'ubuntu'
   apt_repository 'packages-lacework-prod' do
     uri "https://packages.lacework.net/DEB/#{node['platform']}/#{node['platform_version']}"
     arch 'amd64'
-    key ['18E76630']
+    key ['EE0CC692']
     keyserver 'keyserver.ubuntu.com'
     components ['main']
     action :add
@@ -19,7 +19,7 @@ when 'debian'
   apt_repository 'packages-lacework-prod' do
     uri "https://packages.lacework.net/DEB/#{node['platform']}/#{node['platform_version'].to_i}"
     arch 'amd64'
-    key ['18E76630']
+    key ['EE0CC692']
     keyserver 'keyserver.ubuntu.com'
     components ['main']
     action :add
