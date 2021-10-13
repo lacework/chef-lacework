@@ -3,7 +3,7 @@ maintainer 'Lacework, Inc.'
 maintainer_email 'tech-ally@lacework.net'
 license 'Apache-2.0'
 description 'Installs the Lacework agent for workload protection'
-version '0.2.1'
+version '0.2.2'
 chef_version '>= 13.12'
 %w( amazon centos fedora debian oracle redhat suse opensuse ubuntu ).each do |os|
   supports os
