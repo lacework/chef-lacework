@@ -18,7 +18,7 @@ Platforms
 * Debian 9/10
 * RedHat 7/8 (RHEL 8 requires chef >= 15)
 * Scientific Linux
-* Ubuntu 16.04/18.04
+* Ubuntu 16.04/18.04/20.04/21.04
 * SUSE (requires chef >= 13.3)
 
 
