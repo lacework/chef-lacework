@@ -32,6 +32,8 @@ platforms:
   - name: debian-9
   - name: ubuntu-16.04
   - name: ubuntu-18.04
+  - name: ubuntu-20.04
+  - name: ubuntu-21.04
 
 suites:
   - name: default
