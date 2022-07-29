@@ -8,6 +8,9 @@ directory '/var/lib/lacework/config' do
 end
 
 template '/var/lib/lacework/config/config.json' do
+  owner 'root'
+  group 'root'
+  mode '0640'
   source 'config.json.erb'
   variables(
     config: node['chef-lacework']['config']
